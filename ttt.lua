@@ -9,7 +9,7 @@
 -- Export Types --
 export type Window = {
 	Name: string,
-	Keybind: string | Enum.KeyCode.RightControl,
+	Keybind: string | Enum.KeyCode,
 	Scale: UDim2,
 	Expire: string
 }
@@ -4139,7 +4139,7 @@ function Fatality.new(Window: Window)
 	Window = Window or {};
 	Window.Name = Window.Name or "FATALITY";
 	Window.Scale = Window.Scale or UDim2.new(0, 750, 0, 500);
-	Window.Keybind = Window.Keybind or "Insert";
+	Window.Keybind = Window.Keybind or "RightControl";
 	Window.Expire = Window.Expire or "never";
 
 	local Fatal = {
