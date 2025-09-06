@@ -4182,7 +4182,7 @@ function Fatality.new(Window: Window)
 	local InfoButton = Instance.new("ImageButton")
 	local SearchButton = Instance.new("ImageButton")
 	local SaveButton = Instance.new("ImageButton")
-    function Fatality:Destroy()
+    function Fatality:Unload()
         Fatalitywin:Destroy()
     end;
 	Fatality.WindowFlags[Fatalitywin] = {};
