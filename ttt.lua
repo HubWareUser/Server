@@ -4182,7 +4182,9 @@ function Fatality.new(Window: Window)
 	local InfoButton = Instance.new("ImageButton")
 	local SearchButton = Instance.new("ImageButton")
 	local SaveButton = Instance.new("ImageButton")
-
+    function Fatality:Destroy()
+        Fatalitywin:Destroy()
+    end;
 	Fatality.WindowFlags[Fatalitywin] = {};
 
 	Fatality:ScrollSignal(tbc,UIListLayout,'X');
