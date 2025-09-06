@@ -1170,20 +1170,22 @@ function Fatality:Rounding(num: number, numDecimalPlaces: number) : number
 	local mult: number = 10 ^ (numDecimalPlaces or 0);
 	return math.floor(num * mult + 0.5) / mult;
 end;
-
 function Fatality:CreateAnimation(Instance: Instance , Time: number , Style : Enum.EasingStyle , Property : {[string] : any}) : Tween
-	if not Property then
-		if typeof(Style) == 'table' then
-			Property = Style;
-			Style = nil;
-		end;
-	end;
+    if not Instance or not Instance.Parent then
+        warn("Attempted to tween a nil or destroyed instance")
+        return nil
+    end
 
-	local Tween: Tween = TweenService:Create(Instance,TweenInfo.new(Time or 1 , Style or Enum.EasingStyle.Quint),Property);
+    if not Property then
+        if typeof(Style) == 'table' then
+            Property = Style;
+            Style = nil;
+        end;
+    end;
 
-	Tween:Play();
-
-	return Tween;
+    local Tween: Tween = TweenService:Create(Instance, TweenInfo.new(Time or 1 , Style or Enum.EasingStyle.Quint), Property);
+    Tween:Play();
+    return Tween;
 end;
 
 function Fatality:NewInput(Frame : Frame , Callback : () -> ()) : TextButton
