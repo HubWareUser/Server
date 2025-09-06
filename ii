@@ -546,7 +546,6 @@ lockFOVCircle.Position = Camera.ViewportSize / 2
 lockFOVCircle.Radius = lockAim.fov
 
 local function createLockButton()
-    local coreGui = game:GetService("CoreGui")
     local lockButton = Instance.new("TextButton")
     lockButton.Size = UDim2.new(0, 60, 0, 60)
     lockButton.Position = UDim2.new(0.8, 0, 0.7, 0)
@@ -564,7 +563,7 @@ local function createLockButton()
     corner.CornerRadius = UDim.new(0.3, 0)
     corner.Parent = lockButton
     
-    lockButton.Parent = coreGui
+    lockButton.Parent = TouchGui
     return lockButton
 end
 
@@ -2079,7 +2078,11 @@ end
 
 
 Player.CharacterAdded:Connect(function(character)
+    if lockAim.enabled then
+        createLockButton()
+    end
     task.wait(10)
+
     if weapon.noStopInReloadEnabled then
         setupNoStopInReload()
     end
@@ -2104,16 +2107,6 @@ Player.CharacterAdded:Connect(function(character)
         end
     end
 end)
---[[
-local visualUpdateConnection = RunService.RenderStepped:Connect(function()
-
-    if aim.autoreload then
-        pcall(autoReload)
-    end
-
-end)
-]]--
-
 
 do
     local KillAuraSection = Tabs.Main:AddSection("Kill Aura", {
