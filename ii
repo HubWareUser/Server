@@ -546,6 +546,7 @@ lockFOVCircle.Position = Camera.ViewportSize / 2
 lockFOVCircle.Radius = lockAim.fov
 
 local function createLockButton()
+    local coreGui = game:GetService("CoreGui")
     local lockButton = Instance.new("TextButton")
     lockButton.Size = UDim2.new(0, 60, 0, 60)
     lockButton.Position = UDim2.new(0.8, 0, 0.7, 0)
@@ -563,7 +564,7 @@ local function createLockButton()
     corner.CornerRadius = UDim.new(0.3, 0)
     corner.Parent = lockButton
     
-    lockButton.Parent = TouchGui
+    lockButton.Parent = coreGui
     return lockButton
 end
 
