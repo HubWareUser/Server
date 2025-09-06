@@ -4213,17 +4213,6 @@ function Fatality.new(Window: Window)
             Fatality:CreateAnimation(SettingsButton, 0.1, Enum.EasingStyle.Back, {
                 Position = UDim2.new(0, 60, 0.5, 0)
             })
-        else
-            Fatality:CreateAnimation(SettingsButton, 0.35, {
-                ImageTransparency = 1
-            })
-            
-            Fatality:CreateAnimation(SettingsButton, 0.35, {
-                Position = UDim2.new(0, 60, 1, 20)
-            })
-            
-
-
             
          
             
@@ -4314,12 +4303,12 @@ function Fatality.new(Window: Window)
 			for i,v in next , Fatal.Menus do
 				v.ValueSelect(false);
 			end;
-            Fatality:CreateAnimation(SettingsButton,0.35,{
+            Fatality:CreateAnimation(SettingsButton, 0.35, {
                 ImageTransparency = 1
             })
             
-            Fatality:CreateAnimation(SettingsButton,0.35,{
-                Position = UDim2.new(0,60,1, 20)
+            Fatality:CreateAnimation(SettingsButton, 0.35, {
+                Position = UDim2.new(0, 60, 1, 20)
             })
 			Fatality:CreateAnimation(SaveButton,0.35,{
 				Position = UDim2.new(0,35,1, 20)
