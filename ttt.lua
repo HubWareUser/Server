@@ -4206,11 +4206,7 @@ function Fatality.new(Window: Window)
 			if Fatal.MenuSelected then
 				Fatal.MenuSelected.ValueSelect(true)
 			end
-            Fatality:CreateAnimation(SettingsButton,0.25,{
-                ImageTransparency = 0.5
-            })
-         
-            
+
 			Fatality:CreateAnimation(FatalFrame,0.15,{
 				Size = Window.Scale,
 				BackgroundTransparency = 0,
@@ -4298,10 +4294,6 @@ function Fatality.new(Window: Window)
 			for i,v in next , Fatal.Menus do
 				v.ValueSelect(false);
 			end;
-            Fatality:CreateAnimation(SettingsButton,0.35,{
-                ImageTransparency = 1
-            })
-            
 
 			Fatality:CreateAnimation(SaveButton,0.35,{
 				Position = UDim2.new(0,35,1, 20)
@@ -4489,103 +4481,6 @@ function Fatality.new(Window: Window)
 	MenuButtonCont.Position = UDim2.new(0, 115, 0.5, 0)
 	MenuButtonCont.Size = UDim2.new(1, -275, 0.75, 0)
 	MenuButtonCont.ZIndex = 4
-
-
-    local SettingsMenu = Instance.new("Frame")
-local UICorner_Settings = Instance.new("UICorner")
-local UIStroke_Settings = Instance.new("UIStroke")
-local DropShadow_Settings = Instance.new("ImageLabel")
-local UnloadButton = Instance.new("TextButton")
-local ExportConfigButton = Instance.new("TextButton")
-local ImportConfigButton = Instance.new("TextButton")
-
-SettingsMenu.Name = "SettingsMenu"
-SettingsMenu.Parent = Fatalitywin
-SettingsMenu.AnchorPoint = Vector2.new(0, 1)
-SettingsMenu.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
-SettingsMenu.BorderColor3 = Color3.fromRGB(0, 0, 0)
-SettingsMenu.BorderSizePixel = 0
-SettingsMenu.ClipsDescendants = true
-SettingsMenu.Position = UDim2.new(0, SettingsButton.AbsolutePosition.X, 0, SettingsButton.AbsolutePosition.Y + 5)
-SettingsMenu.Size = UDim2.new(0, 150, 0, 0)
-SettingsMenu.ZIndex = 210
-SettingsMenu.Visible = false
-
-UICorner_Settings.CornerRadius = UDim.new(0, 2)
-UICorner_Settings.Parent = SettingsMenu
-
-UIStroke_Settings.Color = Color3.fromRGB(29, 29, 29)
-UIStroke_Settings.Parent = SettingsMenu
-
-
-DropShadow_Settings.Parent = SettingsMenu
-DropShadow_Settings.AnchorPoint = Vector2.new(0.5, 0.5)
-DropShadow_Settings.BackgroundTransparency = 1.000
-DropShadow_Settings.BorderSizePixel = 0
-DropShadow_Settings.Position = UDim2.new(0.5, 0, 0.5, 0)
-DropShadow_Settings.Rotation = 0.001
-DropShadow_Settings.Size = UDim2.new(1, 47, 1, 47)
-DropShadow_Settings.ZIndex = 209
-DropShadow_Settings.Image = "rbxassetid://6014261993"
-DropShadow_Settings.ImageColor3 = Color3.fromRGB(0, 0, 0)
-DropShadow_Settings.ImageTransparency = 0.750
-DropShadow_Settings.ScaleType = Enum.ScaleType.Slice
-DropShadow_Settings.SliceCenter = Rect.new(49, 49, 450, 450)
-
-
-UnloadButton.Parent = SettingsMenu
-UnloadButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-UnloadButton.BackgroundTransparency = 1.000
-UnloadButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-UnloadButton.BorderSizePixel = 0
-UnloadButton.Size = UDim2.new(1, 0, 0, 30)
-UnloadButton.ZIndex = 211
-UnloadButton.Font = Enum.Font.GothamMedium
-UnloadButton.Text = "Unload Interface"
-UnloadButton.TextColor3 = Color3.fromRGB(255, 106, 133)
-UnloadButton.TextSize = 12.000
-UnloadButton.TextTransparency = 1
-
-
-local function ToggleSettingsMenu(show)
-    if show then
-        SettingsMenu.Visible = true
-        SettingsMenu.Position = UDim2.new(0, SettingsButton.AbsolutePosition.X, 0, SettingsButton.AbsolutePosition.Y + 5)
-        
-        Fatality:CreateAnimation(SettingsMenu, 0.3, {
-            Size = UDim2.new(0, 150, 0, 90)
-        })
-        
-        Fatality:CreateAnimation(UnloadButton, 0.3, {
-            TextTransparency = 0
-        })
-
-    else
-        Fatality:CreateAnimation(SettingsMenu, 0.3, {
-            Size = UDim2.new(0, 150, 0, 0)
-        })
-        
-        Fatality:CreateAnimation(UnloadButton, 0.3, {
-            TextTransparency = 1
-        })
-        
-        task.delay(0.3, function()
-            SettingsMenu.Visible = false
-        end)
-    end
-end
-
-
-SettingsButton.MouseButton1Click:Connect(function()
-    ToggleSettingsMenu(not SettingsMenu.Visible)
-end)
-
-UnloadButton.MouseButton1Click:Connect(function()
-
-    Fatalitywin:Destroy()
-    ToggleSettingsMenu(false)
-end)
-
 
 	tbc.Name = Fatality:RandomString()
 	tbc.Parent = MenuButtonCont
