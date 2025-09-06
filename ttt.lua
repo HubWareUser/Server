@@ -4456,20 +4456,6 @@ function Fatality.new(Window: Window)
 	HeaderText.TextStrokeColor3 = Color3.fromRGB(205, 67, 218)
 	HeaderText.TextStrokeTransparency = 0.640
 
-    local SettingsButton = Instance.new("ImageButton")
-    SettingsButton.Name = Fatality:RandomString()
-    SettingsButton.Parent = Header
-    SettingsButton.AnchorPoint = Vector2.new(0, 0.5)
-    SettingsButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    SettingsButton.BackgroundTransparency = 1.000
-    SettingsButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    SettingsButton.BorderSizePixel = 0
-    SettingsButton.Position = UDim2.new(0, 60, 0.5, 0) 
-    SettingsButton.Size = UDim2.new(0, 20, 0, 20)
-    SettingsButton.ZIndex = 5
-    SettingsButton.Image = "rbxassetid://10734950309" 
-    SettingsButton.ImageTransparency = 0.500
-
 	MenuButtonCont.Name = Fatality:RandomString()
 	MenuButtonCont.Parent = Header
 	MenuButtonCont.AnchorPoint = Vector2.new(0, 0.5)
