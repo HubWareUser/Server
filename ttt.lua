@@ -4182,9 +4182,7 @@ function Fatality.new(Window: Window)
 	local InfoButton = Instance.new("ImageButton")
 	local SearchButton = Instance.new("ImageButton")
 	local SaveButton = Instance.new("ImageButton")
-    function Fatality:Unload()
-        Fatalitywin:Destroy()
-    end;
+	local TelegramText = Instance.new("TextLabel")
 	Fatality.WindowFlags[Fatalitywin] = {};
 
 	Fatality:ScrollSignal(tbc,UIListLayout,'X');
@@ -5821,6 +5819,23 @@ function Fatality.new(Window: Window)
 		SearchButton.ZIndex = 4
 		SearchButton.Image = "rbxassetid://10734943674"
 		SearchButton.ImageTransparency = 0.500
+
+		TelegramText.Name = Fatality:RandomString()
+		TelegramText.Parent = Bottom
+		TelegramText.AnchorPoint = Vector2.new(0.5, 0.5)
+		TelegramText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		TelegramText.BackgroundTransparency = 1.000
+		TelegramText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		TelegramText.BorderSizePixel = 0
+		TelegramText.Position = UDim2.new(0, 60, 0.5, 0)
+		TelegramText.Size = UDim2.new(0, 150, 0, 20)
+		TelegramText.ZIndex = 4
+		TelegramText.Font = Enum.Font.GothamMedium
+		TelegramText.Text = "t.me/death_immortaI"
+		TelegramText.TextColor3 = Color3.fromRGB(200, 200, 200)
+		TelegramText.TextSize = 12.000
+		TelegramText.TextTransparency = 0.3
+
 
 		SaveButton.Name = Fatality:RandomString()
 		SaveButton.Parent = Bottom
