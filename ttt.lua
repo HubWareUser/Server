@@ -5827,7 +5827,7 @@ function Fatality.new(Window: Window)
 		TelegramText.BackgroundTransparency = 1.000
 		TelegramText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		TelegramText.BorderSizePixel = 0
-		TelegramText.Position = UDim2.new(0, 60, 0.5, 0) 
+		TelegramText.Position = UDim2.new(0, 120, 0.5, 0) 
 		TelegramText.Size = UDim2.new(0, 150, 0, 20)
 		TelegramText.ZIndex = 4
 		TelegramText.Font = Enum.Font.GothamMedium
