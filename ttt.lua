@@ -5822,19 +5822,20 @@ function Fatality.new(Window: Window)
 
 		TelegramText.Name = Fatality:RandomString()
 		TelegramText.Parent = Bottom
-		TelegramText.AnchorPoint = Vector2.new(0.5, 0.5)
+		TelegramText.AnchorPoint = Vector2.new(0, 0.5)
 		TelegramText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		TelegramText.BackgroundTransparency = 1.000
 		TelegramText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		TelegramText.BorderSizePixel = 0
-		TelegramText.Position = UDim2.new(0, 60, 0.5, 0)
+		TelegramText.Position = UDim2.new(0, 60, 0.5, 0) 
 		TelegramText.Size = UDim2.new(0, 150, 0, 20)
 		TelegramText.ZIndex = 4
 		TelegramText.Font = Enum.Font.GothamMedium
-		TelegramText.Text = "                            t.me/death_immortaI"
+		TelegramText.Text = "t.me/death_immortaI" 
 		TelegramText.TextColor3 = Color3.fromRGB(200, 200, 200)
 		TelegramText.TextSize = 12.000
 		TelegramText.TextTransparency = 0.3
+		TelegramText.TextXAlignment = Enum.TextXAlignment.Left
 
 
 		SaveButton.Name = Fatality:RandomString()
