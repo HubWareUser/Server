@@ -5831,7 +5831,7 @@ function Fatality.new(Window: Window)
 		TelegramText.Size = UDim2.new(0, 150, 0, 20)
 		TelegramText.ZIndex = 4
 		TelegramText.Font = Enum.Font.GothamMedium
-		TelegramText.Text = "t.me/death_immortaI"
+		TelegramText.Text = "                            t.me/death_immortaI"
 		TelegramText.TextColor3 = Color3.fromRGB(200, 200, 200)
 		TelegramText.TextSize = 12.000
 		TelegramText.TextTransparency = 0.3
